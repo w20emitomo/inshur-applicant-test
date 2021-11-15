@@ -24,3 +24,23 @@ Once you're satisfied with your work, please push it up to a public GitHub repos
 If you've chosen to clone this repository, use this command to replace the origin URL with a repository URL you've created:
 
 1. `git remote set-url origin [YOUR_REMOTE_URL]`
+
+## BDD tests
+
+Feature: Customer contact details
+
+  Scenario Outline: check the list of customers
+
+    Given the user visits Inshur Test Website
+    When the click on details of "<Name>"
+    Then the details should have <Name>,<Email>,<Phone>,<City>,<State>,<Country>,<Organization>,<Job Profile>,<Additional Info>
+
+    Examples:
+      | Name       | Email | Phone      | City   | State          | Country | Organization | Job Profile        | Additional Info                                               |
+      | John Smith | Name  | John Smith | London | Greater London | England | Company 1    | Software Developer | Has Bought a lot of products before and a high Value Customer |
+
+
+  Scenario: check the list of customers shown error if no users - Negative
+
+    Given the user visits Inshur Test Website
+    Then I see message that "No users found"
