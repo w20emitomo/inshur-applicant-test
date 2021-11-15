@@ -9,3 +9,9 @@ Feature: Customer contact details
     Examples:
       | Name       | Email | Phone      | City   | State          | Country | Organization | Job Profile        | Additional Info                                               |
       | John Smith | Name  | John Smith | London | Greater London | England | Company 1    | Software Developer | Has Bought a lot of products before and a high Value Customer |
+
+
+  Scenario: check the list of customers shown error if no users - Negative
+
+    Given the user visits Inshur Test Website
+    Then I see message that "No users found"

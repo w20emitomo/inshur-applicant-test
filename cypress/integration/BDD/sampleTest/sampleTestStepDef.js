@@ -23,3 +23,7 @@ Then("the details should have {string},{string},{string},{string},{string},{stri
     cy.get('header').should.have(name) // to assert that we succesfully move to the redirected url
     cy.get('header').should.have(Email) // to assert that we succesfully move to the redirected url
 })
+
+Then("Then I see message that {string}",(name)=>{
+    //assert message
+})
