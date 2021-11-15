@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "server": "node server.js",
     "test": "node_modules/.bin/cypress run --browser chrome",
-    "all": "concurrently --kill-others \"yarn start\" \"yarn server\" \"yarn test\""
+    "all": "concurrently --kill-others \"yarn start\" \"yarn server\" \"yarn test\"",
+    "ui": "concurrently --kill-others \"yarn start\" \"yarn server\""
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true

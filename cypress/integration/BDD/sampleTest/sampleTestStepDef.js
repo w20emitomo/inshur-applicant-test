@@ -12,3 +12,14 @@ When("the click the last user",()=>{
 Then("assert",()=>{
     cy.contains("Buys Lots of Products in general") // to assert that we succesfully move to the redirected url
 })
+
+
+When("the click on details of {string}",(name)=>{
+    //
+    cy.click('xpath=//h3[text()=\''+name+'\']//ancestor::*//div//button') // to assert that we succesfully move to the redirected url
+})
+
+Then("the details should have {string},{string},{string},{string},{string},{string},{string},{string},{string}",(name,Email,Phone,City,State,Country,Organization,Job_Profile,Additional_Info)=>{
+    cy.get('header').should.have(name) // to assert that we succesfully move to the redirected url
+    cy.get('header').should.have(Email) // to assert that we succesfully move to the redirected url
+})
